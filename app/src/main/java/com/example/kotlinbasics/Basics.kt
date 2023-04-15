@@ -60,4 +60,13 @@ fun main(){
     var result = 5+3
     result /= 2
     println(result)
+    val a = 5.0
+    val b = 3
+    var resultDouble : Double
+    resultDouble = a / b
+    println(resultDouble)
+
+    //Comparison Operator (==, !=, <, >, <=, >=)
+    val isEqual = 5==3
+    println("isEqual is $isEqual")
 }
