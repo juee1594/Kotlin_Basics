@@ -8,12 +8,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kotlinbasics.R
 import com.example.kotlinbasics.model.Data
 import com.example.kotlinbasics.view.SampleRoomDbActivity
+import com.example.kotlinbasics.view.ViewModelExample
 
 class RecyclerAdapter(val list: ArrayList<Data>, val context: Context) :
     RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
@@ -23,6 +25,7 @@ class RecyclerAdapter(val list: ArrayList<Data>, val context: Context) :
         val tv_emp_salary: TextView = itemview.findViewById(R.id.tv_emp_salary)
         val tv_emp_age: TextView = itemview.findViewById(R.id.tv_emp_age)
         val img_edit: ImageView = itemview.findViewById(R.id.img_edit)
+        val linearLayout: LinearLayout = itemview.findViewById(R.id.linearLayout)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -51,6 +54,10 @@ class RecyclerAdapter(val list: ArrayList<Data>, val context: Context) :
 //                dialogWithEdit(itemView)
             }
 
+            linearLayout.setOnClickListener({
+                val intent = Intent(context, ViewModelExample::class.java)
+                context.startActivity(intent)
+            })
         }
     }
 

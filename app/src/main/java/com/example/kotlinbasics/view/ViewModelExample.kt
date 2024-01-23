@@ -2,35 +2,33 @@ package com.example.kotlinbasics.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import com.example.kotlinbasics.Observer
+import android.view.View
+import android.widget.TextView
+import androidx.lifecycle.ViewModelProvider
 import com.example.kotlinbasics.R
+import com.example.kotlinbasics.model.MainViewModel
 
 class ViewModelExample : AppCompatActivity() {
+
+    lateinit var mainViewModel: MainViewModel
+    lateinit var txtCounter: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_viewmodel_example)
-        lifecycle.addObserver(Observer())
-        Log.d("Main", "Activity onCreate")
+        setContentView(R.layout.activity_view_model_example)
+
+        mainViewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+        txtCounter = findViewById(R.id.mytextview)
+
+        setText()
     }
 
-    override fun onResume() {
-        super.onResume()
-        Log.d("Main", "Activity onResume")
+    fun setText() {
+        txtCounter.text = mainViewModel.count.toString()
     }
 
-    override fun onPause() {
-        super.onPause()
-        Log.d("Main", "Activity onPause")
-    }
-
-    override fun onStop() {
-        super.onStop()
-        Log.d("Main", "Activity onStop")
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.d("Main", "Activity onDestroy")
+    fun increment(view: View){
+        mainViewModel.increment()
+        setText()
     }
 }
