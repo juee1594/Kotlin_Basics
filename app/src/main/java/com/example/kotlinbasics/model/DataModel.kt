@@ -1,4 +1,4 @@
-package com.example.kotlinbasics
+package com.example.kotlinbasics.model
 
 data class DataModel(
     val data: List<Data>,

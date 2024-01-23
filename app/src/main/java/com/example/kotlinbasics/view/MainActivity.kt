@@ -1,4 +1,4 @@
-package com.example.kotlinbasics
+package com.example.kotlinbasics.view
 
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +9,11 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.kotlinbasics.R
+import com.example.kotlinbasics.adapter.RecyclerAdapter
+import com.example.kotlinbasics.apihelper.ApiInterface
+import com.example.kotlinbasics.model.Data
+import com.example.kotlinbasics.model.DataModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -19,12 +24,14 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var recyclerView: RecyclerView
     lateinit var list: ArrayList<Data>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         recyclerView = findViewById(R.id.recyclerView)
         list = ArrayList()
+
 
         val layoutManager = LinearLayoutManager(this)
 
@@ -74,5 +81,7 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
+
+
     }
 }

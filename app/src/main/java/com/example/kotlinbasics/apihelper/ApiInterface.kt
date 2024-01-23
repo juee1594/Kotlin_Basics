@@ -1,5 +1,6 @@
-package com.example.kotlinbasics
+package com.example.kotlinbasics.apihelper
 
+import com.example.kotlinbasics.model.DataModel
 import retrofit2.Call
 import retrofit2.http.GET
 
