@@ -14,6 +14,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kotlinbasics.R
 import com.example.kotlinbasics.model.Data
+import com.example.kotlinbasics.view.LiveDataExample
 import com.example.kotlinbasics.view.SampleRoomDbActivity
 import com.example.kotlinbasics.view.ViewModelExample
 
@@ -49,7 +50,9 @@ class RecyclerAdapter(val list: ArrayList<Data>, val context: Context) :
 
             img_edit.setOnClickListener(){
 
-                val intent = Intent(context, SampleRoomDbActivity::class.java)
+//                val intent = Intent(context, SampleRoomDbActivity::class.java)
+//                context.startActivity(intent)
+                val intent = Intent(context, LiveDataExample::class.java)
                 context.startActivity(intent)
 //                dialogWithEdit(itemView)
             }

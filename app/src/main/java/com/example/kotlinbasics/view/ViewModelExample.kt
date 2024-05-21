@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
+import com.example.kotlinbasics.MainViewModelFactory
 import com.example.kotlinbasics.R
 import com.example.kotlinbasics.model.MainViewModel
 
@@ -17,7 +18,7 @@ class ViewModelExample : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_model_example)
 
-        mainViewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+        mainViewModel = ViewModelProvider(this, MainViewModelFactory(10)).get(MainViewModel::class.java)
         txtCounter = findViewById(R.id.mytextview)
 
         setText()

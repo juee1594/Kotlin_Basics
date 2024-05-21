@@ -181,11 +181,187 @@ fun main() {
 //    for(j in days){
 //        println("Today is ${j.name}")
 //    }
+
+
+    /*Write a program that reads an integer from the user and prints whether it’s positive, negative, or zero in kotlin*/
+
+//    print("Please enter an integer: ")
+//    val input = readLine()
+//
+//    if (input != null) {
+//        val number = input.toIntOrNull()
+//
+//        if (number != null) {
+//            if (number > 0)
+//                println("The number is positive")
+//            else if (number < 0)
+//                println("The number is negative")
+//            else
+//                println("The number is zero")
+//        } else {
+//            println("That's not a valid integer")
+//        }
+//    } else {
+//        println("Input can not be null")
+//    }
+
+    /*Implement a function that returns the maximum of two numbers using an if-else statement in kotlin*/
+//    println("The maximum of 4 and 7 is: ${maxOfTwoNumbers(4, 7)}")
+//    println("The maximum of 10 and 5 is: ${maxOfTwoNumbers(10, 5)}")
+//    println("The maximum of 5 and 5 is ${maxOfTwoNumbers(5, 5)}")
+
+
+    /*Create a function that takes a character and returns whether it’s a vowel or a consonant using a when statement in kotlin*/
+//    println("Character 'a' is a ${isVowelOrConsonant('a')}")
+//    println("Character 'B' is a ${isVowelOrConsonant('B')}")
+//    println("Character 'z' is a ${isVowelOrConsonant('z')}")
+//    println("Character '1' is a ${isVowelOrConsonant('1')}")
+//    println("Character '#' is a ${isVowelOrConsonant('#')}")
+
+
+    /*Write a program that reads a score and prints the corresponding grade using when in kotlin*/
+//    print("Please enter a score (0-100): ")
+//    val input = readLine()
+//
+//    if(input != null){
+//        val score = input.toIntOrNull()
+//
+//        if(score != null && score in 1..100){
+//            val grade = when(score){
+//                in 90..100 -> "A"
+//                in 80..89 -> "B"
+//                in 70..79 -> "C"
+//                in 60..69 -> "D"
+//                in 0..59 -> "F"
+//                else -> "Invalid score"
+//            }
+//            println("The grade is: $grade")
+//        }
+//        else{
+//            println("Please enter a valid ")
+//        }
+//    }
+//    else{
+//        println("Input can not be null")
+//    }
+
+    /*Iterate over a list of names and print each name in kotlin*/
+//    val names = listOf("Juee", "Roshan", "Akshata", "Amit")
+//    for(name in names){
+//        println(name)
+//    }
+
+    /*Print the numbers from 1 to 10 in reverse order using a for loop in kotlin*/
+//    for(i in 10 downTo 1){
+//        println(i)
+//    }
+
+    /*Write a program to calculate the factorial of a number using a while loop in kotlin*/
+//    print("Please enter a positive integer: ")
+//    val input = readln()
+//
+//    if(input != null){
+//        val number = input.toIntOrNull()
+//
+//        if (number != null && number >= 0){
+//            var factorial = 1L
+//            var i = number
+//            while (i > 0) {
+//                factorial *= i
+//                i--
+//            }
+//            println("The factorial of $number is: $factorial")
+//        }
+//        else{
+//            println("Please enter a valid positive integer.")
+//        }
+//    }
+//    else{
+//        println("Input can not be null")
+//    }
+
+    /*Implement a simple countdown timer using a do-while loop in kotlin*/
+
+//    print("Please enter the countdown start number: ")
+//    val input = readln()
+//    if(input!= null){
+//        val startNumber = input.toIntOrNull()
+//
+//        if(startNumber!=null && startNumber>0){
+//            var currentNumber = startNumber
+//
+//            do{
+//                println(currentNumber)
+//                Thread.sleep(1000)
+//                currentNumber--
+//            }while (currentNumber >=0 )
+//
+//            println("Countdown finished")
+//        }
+//        else{
+//            print("Please enter a valid non-negative number")
+//        }
+//    }
+//    else{
+//        print("Input can not be empty")
+//    }
+
+    /*Print all even numbers between 1 and 20 using a range in kotlin*/
+
+//    val number = 1..20
+//    for(i in number){
+//        if(i %2 == 0){
+//            println(i)
+//        }
+//    }
+
+    /*Check if a number is within a given range and print a message in kotlin*/
+
+    val lowerBound = 10
+    val upperBound = 50
+
+    print("Please enter a number: ")
+    val input = readln()
+    if(input!= null){
+        val number = input.toIntOrNull()
+
+        if(number!=null){
+            if(number in lowerBound..upperBound){
+                print("The number $number is within the range $lowerBound to $upperBound")
+            }
+            else{
+                print("The number $number is outside the range $lowerBound to $upperBound")
+            }
+        }
+        else{
+            print("Please enter a valid  number")
+        }
+    }
+    else{
+        print("Input can not be empty")
+    }
+
 }
 
-fun averageNumber(a: Double, b: Double) : Double{
-    return (a+b)/2
+fun averageNumber(a: Double, b: Double): Double {
+    return (a + b) / 2
 }
 
-data class Fruits(val name:String, val price:Double)
-data class Days(val name:String)
+data class Fruits(val name: String, val price: Double)
+data class Days(val name: String)
+
+fun maxOfTwoNumbers(a: Int, b: Int): Int {
+    return if (a > b)
+        a
+    else
+        b
+}
+
+fun isVowelOrConsonant(ch: Char): String {
+    return when (ch.toLowerCase()) {
+        'a', 'e', 'i', 'o', 'u' -> "Vowel"
+        in 'a'..'z' -> "Consonant"
+        else -> "Not a letter"
+    }
+}
+
